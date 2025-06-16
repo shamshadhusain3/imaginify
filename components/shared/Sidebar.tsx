@@ -5,7 +5,6 @@ import Link from "next/link";
 import React from "react";
 import { navLinks } from "./constants";
 import { usePathname } from "next/navigation";
-import { Key } from "lucide-react";
 import { Button } from "../ui/button";
 
 const Sidebar = () => {
