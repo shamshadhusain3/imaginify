@@ -1,16 +1,14 @@
-
 /* eslint-disable camelcase */
-// import { clerkClient } from "@clerk/nextjs";
+console.log('[DEBUG] clerk webhook route.ts loaded');
 import { clerkClient } from "@clerk/clerk-sdk-node";
-
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 
 import { createUser, deleteUser, updateUser } from "@/lib/actions/user.action";
-
 export async function POST(req: Request) {
+  console.log("[DEBUG] POST handler called in /api/webhooks/clerk");
   console.log("Webhook endpoint called");
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
@@ -124,4 +122,9 @@ export async function POST(req: Request) {
   console.log("Webhook body:", body);
 
   return new Response("", { status: 200 });
+}
+
+
+export async function GET() {
+  return Response.json({ message: 'Hello World!' })
 }
