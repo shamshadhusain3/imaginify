@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+declare module 'qs';
 
 // ====== USER PARAMS
 declare type CreateUserParams = {
