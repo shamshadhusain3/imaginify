@@ -14,7 +14,7 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () =>{
-    if (!cached.conn) return cached.conn;
+    if (cached.conn) return cached.conn;
 
     if (!MONGODB_URI) {
         throw new Error(" the MONGODB_URI  is not defined in the .env file");
